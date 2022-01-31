@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="dataService" class="com.dev.service.DataService" />
+	<bean id="hellotuneService"
+		class="com.dev.service.HellotuneService" />
+	<bean id="misscallAlertService"
+		class="com.dev.service.MissCallAlertService" />
+
+	<bean id="jio" class="com.dev.service.Jio">
+		<!--  <property name="service" ref="misscallAlertService" />-->
+		<constructor-arg name="service" ref="misscallAlertService" />
+
+	</bean>
+
+</beans>
